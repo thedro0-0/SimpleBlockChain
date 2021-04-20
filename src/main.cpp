@@ -4,6 +4,5 @@
 int main()
 {
     Block::Genesis();
-
-    
+    BlockChain::ChainLength();
 }

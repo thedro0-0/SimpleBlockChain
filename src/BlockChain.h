@@ -12,7 +12,7 @@ class BlockChain
 {
     friend Block;
 public:
-    unsigned int ChainLength();
+    static unsigned int ChainLength();
 
 protected:
     static std::vector<Block> Chain;    // This is the BlockChain
