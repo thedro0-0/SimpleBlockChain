@@ -1,8 +1,8 @@
 #include "BlockChain.h"
 
-Block::Block(uint32_t index, const std::string& data)
+Block::Block(const std::string& data)
 {
-    Index = index;
+    Index = BlockChain::Chain.size() -1;
     Data = data;
 
     std::time_t result = std::time(nullptr);
@@ -40,4 +40,23 @@ Block& Block::getLastBlock() const
     Block& bloc = BlockChain::Chain.back();
     return bloc;
 }
+
+void Block::WriteBlock()
+{
+    std::cout << "Block \n index: " << Index << "\n Time: " << Time
+    << "\n Data: " << Data << "\n Previous Hash: " << PrevHash << "\n Nounce: " 
+    << hash_nounce.first << "\n Hash: " << hash_nounce.second << std::endl;
+}
+
+void Block::addBlocktoChain()
+{
+    BlockChain::Chain.push_back(*this);
+}
+
+void Genesis()
+{
+    Block GenesisBlock("First Block");
+
+}
+
 
