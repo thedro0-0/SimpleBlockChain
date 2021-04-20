@@ -132,3 +132,8 @@ std::string sha256(std::string input)
         sprintf(buf+i*2, "%02x", digest[i]);
     return std::string(buf);
 }
+
+int main()
+{
+    return 0;
+}
