@@ -14,8 +14,7 @@ class BlockChain
 public:
     static unsigned int ChainLength();
 
-protected:
-    static std::vector<Block> Chain;    // This is the BlockChain
+     static inline std::vector<Block> Chain;  // This is the BlockChain
     
 
 };
@@ -27,10 +26,13 @@ class Block
     
 public:
     //Constructor
-    Block(const std::string& Data);
+    Block(const std::string& data);
+    Block(const std::string& Data, bool isGen); // Genesis Block Constructor
 
     // Public Methods
     std::string getHash(int);
+
+    void WriteBlock();
 
     static void Genesis();
 
@@ -44,13 +46,12 @@ private:
     std::pair<int, std::string> hash_nounce;
 
     // Private Methods
-    std::string calcHash() const;
 
     Block& getLastBlock() const;
 
     std::pair<int, std::string> PoW();
 
-    void WriteBlock();
+    
 
     void addBlocktoChain();
 

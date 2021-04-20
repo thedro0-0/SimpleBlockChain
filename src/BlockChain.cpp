@@ -18,6 +18,17 @@ Block::Block(const std::string& data)
 
 }
 
+Block::Block(const std::string& data, bool isGen)
+{
+    Index = 0;
+    Data = data;
+    std::time_t result = std::time(nullptr);
+    Time = asctime(std::localtime(&result));
+    PrevHash = "0";
+
+    hash_nounce = PoW();
+}
+
 std::pair<int, std::string> Block::PoW()
 {
     std::string difficulty = "00";
@@ -30,6 +41,7 @@ std::pair<int, std::string> Block::PoW()
             return std::make_pair(nounce, Hnounce);
         }else {
             ++nounce;
+            std::cout << "attempted" << std::endl;
         }
     }
 }
@@ -60,7 +72,7 @@ void Block::addBlocktoChain()
 
 void Block::Genesis()
 {
-    Block GenesisBlock("First Block");
+    Block GenesisBlock("First Block", true);
     GenesisBlock.addBlocktoChain();
 
 }
