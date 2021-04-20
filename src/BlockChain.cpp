@@ -7,7 +7,7 @@ unsigned int BlockChain::ChainLength()
 
 Block::Block(const std::string& data)
 {
-    //Index = BlockChain::Chain.size();
+    Index = BlockChain::Chain.size();
     Data = data;
 
     std::time_t result = std::time(nullptr);
