@@ -1,8 +1,13 @@
 #include "BlockChain.h"
 
+unsigned int BlockChain::ChainLength()
+{
+    return Chain.size()-1;
+}
+
 Block::Block(const std::string& data)
 {
-    Index = BlockChain::Chain.size() -1;
+    Index = BlockChain::Chain.size();
     Data = data;
 
     std::time_t result = std::time(nullptr);
@@ -53,9 +58,10 @@ void Block::addBlocktoChain()
     BlockChain::Chain.push_back(*this);
 }
 
-void Genesis()
+void Block::Genesis()
 {
     Block GenesisBlock("First Block");
+    GenesisBlock.addBlocktoChain();
 
 }
 

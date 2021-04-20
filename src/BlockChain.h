@@ -11,6 +11,8 @@ class Block;
 class BlockChain
 {
     friend Block;
+public:
+    unsigned int ChainLength();
 
 protected:
     static std::vector<Block> Chain;    // This is the BlockChain
@@ -19,14 +21,19 @@ protected:
 };
 
 class Block
-{
+{ 
+    // Friend Declarations
     friend BlockChain;
+    
 public:
     //Constructor
     Block(const std::string& Data);
 
     // Public Methods
     std::string getHash(int);
+
+    static void Genesis();
+
 
 private:
     // Private Members
@@ -46,5 +53,6 @@ private:
     void WriteBlock();
 
     void addBlocktoChain();
+
 
 };
