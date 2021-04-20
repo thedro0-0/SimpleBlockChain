@@ -133,7 +133,3 @@ std::string sha256(std::string input)
     return std::string(buf);
 }
 
-int main()
-{
-    return 0;
-}
