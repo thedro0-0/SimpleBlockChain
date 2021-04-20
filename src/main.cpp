@@ -4,5 +4,5 @@
 int main()
 {
     Block::Genesis();
-    BlockChain::ChainLength();
+    std::cout << BlockChain::ChainLength() << std::endl;
 }
