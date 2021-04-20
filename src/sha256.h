@@ -1,3 +1,5 @@
+// Credit goes to http://www.zedwood.com/article/cpp-sha256-function"
+
 #ifndef SHA256_H
 #define SHA256_H
 #include <string>

@@ -12,6 +12,12 @@ private:
 
 class Block
 {
+public:
+    //Constructor
+    Block(uint32_t Index, const std::string& Data);
+
+    // Public Methods
+    std::string getHash();
 
 private:
     // Private Members
