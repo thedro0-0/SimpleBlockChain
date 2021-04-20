@@ -65,7 +65,4 @@ void Block::Genesis()
 
 }
 
-int main()
-{
-    return 0;
-}
+
