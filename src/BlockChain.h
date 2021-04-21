@@ -36,6 +36,8 @@ public:
 
     static void Genesis();
 
+    void addBlocktoChain();
+
 
 private:
     // Private Members
@@ -50,10 +52,9 @@ private:
     Block& getLastBlock() const;
 
     std::pair<int, std::string> PoW();
-
-    
-
-    void addBlocktoChain();
+ 
 
 
 };
+
+void MineBlock(std::string data);

@@ -70,6 +70,12 @@ void Block::addBlocktoChain()
     BlockChain::Chain.push_back(*this);
 }
 
+void MineBlock(std::string data)
+{
+    Block MinedBlock(data);
+    MinedBlock.addBlocktoChain();
+}
+
 void Block::Genesis()
 {
     Block GenesisBlock("First Block", true);
