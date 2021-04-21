@@ -15,11 +15,13 @@ int main()
         MineBlock("data");
     }else
     {
-        return;
+        return 0;
     }
 
     for (Block& v : BlockChain::Chain)
     {
         v.WriteBlock();
+        std::cout << "\n" << "\n" << std::endl;
+        std::cout << "--------------------------" << std::endl;
     }
 }
